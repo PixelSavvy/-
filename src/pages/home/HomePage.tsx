@@ -11,7 +11,7 @@ const HomePage = () => {
       <Services />
       <Testimonials />
       <Faq />
-      <BlogsCarousel />
+      <BlogsCarousel heading="წაიკითხეთ ჩვენი ბლოგები" subheading="ბლოგები" />
     </>
   );
 };

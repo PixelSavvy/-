@@ -11,7 +11,15 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui";
 
 import styles from "./BlogsCarousel.module.css";
 
-const BlogsCarousel = () => {
+interface BlogsCarouselProps {
+  heading?: string;
+  subheading?: string;
+}
+
+const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
+  heading,
+  subheading,
+}) => {
   const [blogs, setBlogs] = useState<blogsDataTypes[]>([]);
 
   const query = "blog";
@@ -23,7 +31,7 @@ const BlogsCarousel = () => {
     <Section
       className={`bg-muted ${styles.bleed} py-10 md:py-12 lg:py-14 xl:py-16`}
     >
-      <SectionHeading heading="წაიკითხეთ ჩვენი ბლოგები" subheading="ბლოგები" />
+      <SectionHeading heading={heading} subheading={subheading} />
       {/* Blogs Carousel */}
       <Carousel>
         <CarouselContent className="-ml-4 md:-ml-6">

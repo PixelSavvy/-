@@ -2,8 +2,8 @@ const SectionHeading = ({
   heading,
   subheading,
 }: {
-  heading: string;
-  subheading?: string;
+  heading: string | undefined;
+  subheading?: string | undefined;
 }) => {
   return (
     <div className="mb-10 space-y-3 text-center md:mb-14 lg:mb-16 xl:mb-20">

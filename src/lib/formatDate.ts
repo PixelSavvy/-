@@ -13,7 +13,8 @@ const georgianMonths = [
   "დეკემბერი",
 ];
 
-const formatDate = (ISO: string) => {
+export const formatDate = (ISO: string | undefined) => {
+  if (!ISO) return;
   const date = new Date(ISO);
 
   const userLocale = navigator.language || "ka-GE";
@@ -40,5 +41,3 @@ const formatDate = (ISO: string) => {
 
   return georgianFormattedDate;
 };
-
-export default formatDate;

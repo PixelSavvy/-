@@ -9,7 +9,7 @@ import {
 } from "@/components/ui";
 
 import { blogsDataTypes } from "@/types/blogsDataTypes";
-import formatDate from "@/lib/formatDate";
+import { formatDate } from "@/lib/formatDate";
 import { Link } from "react-router-dom";
 
 interface BlogTemplateProps {
