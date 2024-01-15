@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BPG Boxo */
+@font-face {
+  font-family: "BPG Boxo";
+  src: url("@/assets/fonts/boxo.ttf");
+}
+/* ///////////////////////// */
+/* ///////////////////////// */
+/* ///////////////////////// */
+
+/* TBC Contractica CAPS */
+@font-face {
+  font-family: "TBC Caps Reg";
+  src: url("@/assets/fonts/tbc-caps-regular.ttf");
+}
+@font-face {
+  font-family: "TBC Caps Md";
+  src: url("@/assets/fonts/tbc-caps-medium.ttf");
+}
+@font-face {
+  font-family: "TBC Caps Bld";
+  src: url("@/assets/fonts/tbc-caps-bold.ttf");
+}
+@font-face {
+  font-family: "TBC Caps Black";
+  src: url("@/assets/fonts/tbc-caps-black.ttf");
+}
+/* ///////////////////////// */
+/* ///////////////////////// */
+/* ///////////////////////// */
+
+/* TBC Contractica */
+@font-face {
+  font-family: "TBC Reg";
+  src: url("@/assets/fonts/tbc-regular.ttf");
+}
+@font-face {
+  font-family: "TBC Md";
+  src: url("@/assets/fonts/tbc-medium.ttf");
+}
+@font-face {
+  font-family: "TBC Bld";
+  src: url("@/assets/fonts/tbc-bold.ttf");
+}
+@font-face {
+  font-family: "TBC Black";
+  src: url("@/assets/fonts/tbc-black.ttf");
+}
+
+@layer base {
+  :root {
+    /* Colors */
+    --background: 200 0% 100%; /* #ffffff */
+    --foreground: 260 0% 0%; /* #000000 */
+
+    --card: 200 0% 100%;
+    --card-foreground: 260 0% 0%;
+
+    --popover: 200 0% 100%;
+    --popover-foreground: 260 0% 0%;
+
+    --primary: 48 95% 60%;
+    --primary-foreground: 260 0% 0%;
+
+    --secondary: 260 65% 49%;
+    --secondary-foreground: 260 0% 0%;
+
+    --success: 89 77% 61%;
+    --success-foreground: 260 0% 0%;
+
+    --warning: 38 100% 62%;
+    --warning-foreground: 260 0% 0%;
+
+    --info: 203 100% 59%;
+    --info-foreground: 260 0% 0%;
+
+    --danger: 352 100% 62%;
+    --danger-foreground: 260 0% 0%;
+
+    --muted: 0 0% 98%;
+    --muted-foreground: 260 0% 0%;
+
+    --accent: 260 16% 93%;
+    --accent-foreground: 260 0% 0%;
+
+    --border: 260 65% 49%;
+    --input: 0 0% 98%;
+    --ring: 260 65% 49%;
+
+    --radius: 0.5rem;
+
+    /* Fonts */
+    --ff-bpg-boxo: "BPG Boxo", sans-serif;
+
+    --ff-tbc-caps-reg: "TBC Caps Reg", sans-serif;
+    --ff-tbc-caps-md: "TBC Caps Md", sans-serif;
+    --ff-tbc-caps-bld: "TBC Caps Bld", sans-serif;
+    --ff-tbc-caps-black: "TBC Caps Black", sans-serif;
+
+    --ff-tbc-reg: "TBC Reg", sans-serif;
+    --ff-tbc-md: "TBC Md", sans-serif;
+    --ff-tbc-bld: "TBC Bld", sans-serif;
+    --ff-tbc-black: "TBC Black", sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply w-full min-h-screen text-base antialiased font-tbc-reg bg-background text-foreground;
+  }
+  h1 {
+    @apply text-xl font-bold tracking-tight md:text-4xl font-bpg-boxo scroll-m-20 lg:text-5xl;
+  }
+  h2 {
+    @apply text-3xl font-normal tracking-tight md:text-4xl scroll-m-20 first:mt-0 font-bpg-boxo;
+  }
+  h3 {
+    @apply text-2xl tracking-tight font-tbc-caps-bld scroll-m-20;
+  }
+  h4 {
+    @apply text-xl font-semibold tracking-tight scroll-m-20;
+  }
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+}
+
+@layer utilities {
+  .list {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  .large {
+    @apply text-lg font-medium;
+  }
+
+  .small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .muted {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .lead {
+    @apply text-xl text-muted-foreground;
+  }
+}

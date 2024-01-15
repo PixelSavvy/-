@@ -1,0 +1,18 @@
+.bleed {
+  box-shadow: 0 0 0 100vmax hsl(var(--muted));
+  clip-path: inset(0 -100vmax);
+}
+
+.advantages-item-first {
+  background: url("https://ik.imagekit.io/dcpowg7vx/Shtagoneba/about/about-img-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.advantages-item-last {
+  background: url("https://ik.imagekit.io/dcpowg7vx/Shtagoneba/about/about-img-2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
