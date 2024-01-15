@@ -3,6 +3,7 @@ import HeroHeading from "./HeroHeading";
 import HeroButtons from "./HeroButtons";
 
 const Hero = ({ url }: { url: string | undefined }) => {
+  console.log(url);
   return (
     <Section className="">
       <div

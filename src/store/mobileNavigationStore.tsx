@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-import { MobileMenuItemsProps } from "@/types";
+import { navigationLinksTypes } from "@/types";
 
 type MobileNavigationContextType = {
   isMenuOpen: boolean;
@@ -9,11 +9,11 @@ type MobileNavigationContextType = {
   setIsSideMenuOpen: (isOpen: boolean) => void;
   collapsedLink: {
     label: string;
-    sublinks: MobileMenuItemsProps[];
+    sublinks: navigationLinksTypes[];
   };
   setCollapsedLink: (collapsedLink: {
     label: string;
-    sublinks: MobileMenuItemsProps[];
+    sublinks: navigationLinksTypes[];
   }) => void;
 };
 
@@ -21,13 +21,10 @@ export const MobileNavigationContext =
   createContext<MobileNavigationContextType>({
     isMenuOpen: false,
     isSideMenuOpen: false,
-    setIsMenuOpen: (isOpen: boolean) => {},
-    setIsSideMenuOpen: (isOpen: boolean) => {},
+    setIsMenuOpen: () => {},
+    setIsSideMenuOpen: () => {},
     collapsedLink: { label: "", sublinks: [] },
-    setCollapsedLink: (collapsedLink: {
-      label: string;
-      sublinks: MobileMenuItemsProps[];
-    }) => {},
+    setCollapsedLink: () => {},
   });
 
 const MobileNavigationProvider: React.FC<{ children: React.ReactNode }> = ({
@@ -37,7 +34,7 @@ const MobileNavigationProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [collapsedLink, setCollapsedLink] = useState<{
     label: string;
-    sublinks: MobileMenuItemsProps[];
+    sublinks: navigationLinksTypes[];
   }>({ label: "", sublinks: [] });
 
   const value = {

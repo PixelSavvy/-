@@ -1,14 +1,15 @@
 import { useContext } from "react";
 import { MobileNavigationContext } from "@/store/mobileNavigationStore";
 import { ChevronRight } from "@/assets/icons/icons";
-import { mobileSideMenuTriggerTypes } from "@/types/navigationLinkTypes";
+import { navigationSideMenuTriggerTypes } from "@/types/navigationLinkTypes";
 
-const MobileSideMenuTrigger: React.FC<mobileSideMenuTriggerTypes> = ({
+const MobileSideMenuTrigger: React.FC<navigationSideMenuTriggerTypes> = ({
   label,
   sublinks = [],
 }) => {
-  const { setIsSideMenuOpen, setCollapsedLink, setIsMenuOpen, isSideMenuOpen } =
-    useContext(MobileNavigationContext);
+  const { setIsSideMenuOpen, setCollapsedLink } = useContext(
+    MobileNavigationContext
+  );
 
   const openSideMenuHandler = () => {
     setCollapsedLink({ label, sublinks });
