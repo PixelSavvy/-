@@ -12,13 +12,13 @@ const OPTIONS = {
     },
   },
   renderNode: {
-    [BLOCKS.HEADING_2]: (node: Node, children: React.ReactNode) => {
+    [BLOCKS.HEADING_2]: (_: Node, children: React.ReactNode) => {
       return <h3 className="mt-4 text-secondary">{children}</h3>;
     },
-    [BLOCKS.HEADING_3]: (node: Node, children: React.ReactNode) => {
+    [BLOCKS.HEADING_3]: (_: Node, children: React.ReactNode) => {
       return <h4 className="mt-4 text-secondary">{children}</h4>;
     },
-    [BLOCKS.PARAGRAPH]: (node: Node, children: React.ReactNode) => {
+    [BLOCKS.PARAGRAPH]: (_: Node, children: React.ReactNode) => {
       return <p className="">{children}</p>;
     },
 
