@@ -7,7 +7,13 @@ import Section from "../ui/section";
 import SectionHeading from "../section-heading/SectionHeading";
 import BlogTemplate from "../blog-template/BlogTemplate";
 
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui";
 
 import styles from "./BlogsCarousel.module.css";
 
@@ -29,7 +35,7 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
 
   return (
     <Section
-      className={`bg-muted ${styles.bleed} py-10 md:py-12 lg:py-14 xl:py-16`}
+      className={`bg-muted ${styles.bleed} py-10 md:py-12 lg:py-14 xl:py-16 `}
     >
       <SectionHeading heading={heading} subheading={subheading} />
       {/* Blogs Carousel */}
@@ -44,6 +50,10 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
             </CarouselItem>
           ))}
         </CarouselContent>
+        <div className="absolute hidden mt-8 ml-10 lg:block">
+          <CarouselPrevious />
+          <CarouselNext />
+        </div>
       </Carousel>
     </Section>
   );

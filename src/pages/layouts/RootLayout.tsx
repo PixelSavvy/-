@@ -1,21 +1,18 @@
+import PageTransition from "@/animation/PageTransition";
+import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
-import Hero from "@/components/hero/Hero";
 
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
-  const params = useParams();
-  const url = params["*"];
-
   return (
-    <>
+    <PageTransition>
       <Header />
       <main className="flex-1">
-        <Hero url={url} />
         <Outlet />
       </main>
-      <footer>Root Footer</footer>
-    </>
+      <Footer />
+    </PageTransition>
   );
 };
 

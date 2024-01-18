@@ -28,7 +28,10 @@ const DesktopNavigationCollapsibleItem: React.FC<
       >
         {sublinks &&
           sublinks.map((sublink) => (
-            <DropdownMenuItem className="w-full text-base hover:text-secondary focus:text-secondary">
+            <DropdownMenuItem
+              className="w-full text-base hover:text-secondary focus:text-secondary"
+              key={sublink.to}
+            >
               <NavLink to={sublink.to}>{sublink.label}</NavLink>
             </DropdownMenuItem>
           ))}

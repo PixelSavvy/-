@@ -1,6 +1,7 @@
 import { lazy } from "react";
 
 const RootLayout = lazy(() => import("@/pages/layouts/RootLayout"));
+const HeroLayout = lazy(() => import("@/pages/layouts/HeroLayout"));
 
 const Home = lazy(() => import("@/pages/home/HomePage"));
 
@@ -13,6 +14,7 @@ const BlogDetails = lazy(() => import("@/pages/blog-details/BlogDetails"));
 
 export const Elements = {
   RootLayout,
+  HeroLayout,
 
   Home,
   About,

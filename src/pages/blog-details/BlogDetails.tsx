@@ -2,24 +2,27 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import useContentful from "@/hooks/useContentful";
 
-import { blogsDataTypes } from "@/types/blogsDataTypes";
+import Section from "@/components/ui/section";
+import { AspectRatio } from "@/components/ui";
+import BlogsCarousel from "@/components/blogs-carousel/BlogsCarousel";
 
 import { formatDate } from "@/lib/formatDate";
 import { documentToReact } from "@/lib/documentToReactComponents";
-import Section from "@/components/ui/section";
-import { AspectRatio } from "@radix-ui/react-aspect-ratio";
-import BlogsCarousel from "@/components/blogs-carousel/BlogsCarousel";
+
+import { blogsDataTypes } from "@/types/blogsDataTypes";
 
 const BlogDetails = () => {
   const [blogData, setBlogData] = useState<blogsDataTypes[]>([]);
   const { id } = useParams<{ id: string }>();
+
+  const blogId = id?.replaceAll("-", " ");
 
   const query = "blog";
   const setStateFunction = setBlogData;
 
   const {} = useContentful<blogsDataTypes[]>({ query, setStateFunction });
 
-  const blog = blogData.find((blog) => blog.blogId === id);
+  const blog = blogData.find((blog) => blog.blogId === blogId);
   const blogTitle = blog?.blogTitle;
   const blogCategory = blog?.blogCategory;
   const blogDate = formatDate(blog?.blogDate);
@@ -27,7 +30,6 @@ const BlogDetails = () => {
 
   //! Convert document to react components (useContentful text-types and document-to-react-components)
   const body = documentToReact(blog?.blogBody);
-  // /////////////////
 
   return (
     <Section>

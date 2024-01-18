@@ -3,9 +3,8 @@ import HeroHeading from "./HeroHeading";
 import HeroButtons from "./HeroButtons";
 
 const Hero = ({ url }: { url: string | undefined }) => {
-  console.log(url);
   return (
-    <Section className="">
+    <Section>
       <div
         className="w-full px-6 pt-10 pb-16 text-center rounded-xl md:px-10 lg:px-14 xl:px-20 md:pt-16 lg:pt-20 xl:pt-24 2xl:pt-30 md:text-start md:pb-16 lg:pb-32 xl:pb-48 2xl:pb-60"
         style={{

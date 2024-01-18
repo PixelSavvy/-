@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import LazyMotionProvider from "@/animation/LazyMotionProvider";
-import AnimatedRoutes from "./router";
+import AnimatedRoutes from "@/router";
+
+import LazyMotionProvider from "./animation/LazyMotionProvider";
 
 const App = () => {
   return (

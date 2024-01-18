@@ -22,7 +22,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ blog }) => {
   const blogDate = formatDate(blog.blogDate);
   const blogCover = blog.blogCover.fields.file.url;
   const blogDescription = blog.blogDescription;
-  const blogId = blog.blogId;
+  const blogId = blog.blogId.replace(/\s+/g, "-").toLowerCase();
 
   return (
     <Card className="flex flex-col items-start justify-between h-full transition-colors border-none shadow-none hover:bg-neutral-100 focus-within:bg-neutral-100 ">
@@ -45,7 +45,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ blog }) => {
             {blogDate}
           </span>
         </CardDescription>
-        <CardTitle>{blogTitle}</CardTitle>
+        <CardTitle className="text-lg">{blogTitle}</CardTitle>
       </CardHeader>
       <CardContent className="whitespace-wrap">
         {blogDescription}...

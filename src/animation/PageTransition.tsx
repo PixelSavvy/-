@@ -1,4 +1,4 @@
-import { m } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const pageVariants = {
   initial: {
@@ -20,15 +20,17 @@ const pageVariants = {
 
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
   return (
-    <m.div
-      className="container flex flex-col w-full min-h-screen"
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
-    >
-      {children}
-    </m.div>
+    <AnimatePresence>
+      <m.div
+        className="container flex flex-col w-full min-h-screen"
+        variants={pageVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        {children}
+      </m.div>
+    </AnimatePresence>
   );
 };
 
