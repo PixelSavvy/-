@@ -115,7 +115,7 @@
     @apply w-full min-h-screen text-base antialiased font-tbc-reg bg-background text-foreground;
   }
   h1 {
-    @apply text-xl font-bold tracking-tight md:text-4xl font-bpg-boxo scroll-m-20 lg:text-5xl;
+    @apply text-2xl font-bold tracking-tight md:text-3xl xl:text-4xl font-bpg-boxo scroll-m-20;
   }
   h2 {
     @apply text-3xl font-normal tracking-tight md:text-4xl scroll-m-20 first:mt-0 font-bpg-boxo;

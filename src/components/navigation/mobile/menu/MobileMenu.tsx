@@ -5,8 +5,6 @@ import { m, AnimatePresence } from "framer-motion";
 import { mobileMenuVariants } from "@/animation/variants/mobileMenuVariants";
 
 import MobileMenuItem from "./MobileMenuItem";
-import { Button } from "@/components/ui";
-import { Link } from "react-router-dom";
 
 import { navigationLinks } from "@/data/navigationLinks";
 import OrderButton from "@/components/buttons/OrderButton";

@@ -15,14 +15,13 @@ const BlogDetails = () => {
   const [blogData, setBlogData] = useState<blogsDataTypes[]>([]);
   const { id } = useParams<{ id: string }>();
 
-  const blogId = id?.replaceAll("-", " ");
-
   const query = "blog";
   const setStateFunction = setBlogData;
 
   const {} = useContentful<blogsDataTypes[]>({ query, setStateFunction });
 
-  const blog = blogData.find((blog) => blog.blogId === blogId);
+  const blog = blogData.find((blog) => blog.blogId === id);
+
   const blogTitle = blog?.blogTitle;
   const blogCategory = blog?.blogCategory;
   const blogDate = formatDate(blog?.blogDate);

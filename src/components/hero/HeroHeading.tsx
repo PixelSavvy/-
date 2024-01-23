@@ -3,8 +3,6 @@ import { TypeAnimation } from "react-type-animation";
 const HeroHeading = () => {
   const typeAnimationProps = {
     sequence: [
-      "საუნივერსიტეტო ნაშრომის",
-      2000,
       "საბაკალავრო ნაშრომის",
       2000,
       "სამაგისტრო ნაშრომის",
@@ -25,7 +23,7 @@ const HeroHeading = () => {
   };
 
   return (
-    <h1 className="flex flex-col items-center justify-between gap-4 md:items-start mb:4 md:mb-6">
+    <h1 className="flex flex-col items-center justify-between gap-4 mb-4 md:items-start md:mb-6">
       <span>ნებისმიერი</span>
       <div>
         <TypeAnimation

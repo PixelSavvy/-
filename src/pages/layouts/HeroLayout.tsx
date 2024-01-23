@@ -1,10 +1,9 @@
 import Hero from "@/components/hero/Hero";
 
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const HeroLayout = () => {
-  const params = useParams();
-  const url = params["*"];
+  const url = window.location.pathname;
 
   return (
     <>

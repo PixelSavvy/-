@@ -2,9 +2,9 @@ export const Paths = {
   Root: "/",
   HeroLayout: "",
   Home: "",
-  About: "ჩვენ-შესახებ",
-  Services: "სერვისები/:serviceId",
+  About: "chven-shesakheb",
+  Services: "servisebi/:serviceId",
 
-  Blogs: "ბლოგები",
-  BlogDetails: "ბლოგები/:id",
+  Blogs: "blogebi",
+  BlogDetails: "blogebi/:id",
 };

@@ -51,7 +51,7 @@ const BlogTemplate: React.FC<BlogTemplateProps> = ({ blog }) => {
         {blogDescription}...
       </CardContent>
       <CardFooter className="transition-colors font-tbc-caps-bld hover:underline hover:underline-offset-2 hover:text-secondary focus-visible:text-secondary focus-visible:underline focus-visible:underline-offset-2">
-        <Link to={`/ბლოგები/${blogId}`} target="_blank">
+        <Link to={`/blogebi/${blogId}`} target="_blank">
           წაიკითხე მეტი
         </Link>
       </CardFooter>

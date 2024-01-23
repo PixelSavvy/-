@@ -7,13 +7,30 @@ interface useHrefProps {
 }
 
 const useHref: useHrefProps = (mobileHref, desktopHref) => {
+  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
   const [href, setHref] = useState(window.location.href);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 1024;
-    const href = isMobile ? mobileHref : desktopHref;
-    setHref(href);
-  }, [window.innerWidth]);
+    const checkScreenSize = () => {
+      const isSmall = window.matchMedia("(max-width: 1024px)").matches;
+      setIsSmallScreen(isSmall);
+    };
+    checkScreenSize();
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isSmallScreen) {
+      setHref(mobileHref);
+    } else {
+      setHref(desktopHref);
+    }
+  }, [isSmallScreen, mobileHref, desktopHref]);
 
   return {
     href,

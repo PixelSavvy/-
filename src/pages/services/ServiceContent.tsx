@@ -9,13 +9,13 @@ interface ServiceContentProps {
 
 const ServiceContent: React.FC<ServiceContentProps> = ({ service }) => {
   return (
-    <Section className="space-y-24">
+    <Section className="space-y-48">
       <SectionHeading
         heading={service?.serviceTitle}
         subheading="სერვისები"
         paragraph={service?.serviceDescription}
       />
-      <ul className="flex flex-col w-full gap-24 lg:gap-48 xl:gap-72 2xl:gap-96 place-items-center">
+      <ul className="flex flex-col w-full gap-16 lg:gap-24 xl:gap-32 2xl:gap-40 place-items-center">
         {service?.servicePageAdvantages?.map((advantage, id) => (
           <ServiceContentItem key={id} service={{ fields: advantage.fields }} />
         ))}

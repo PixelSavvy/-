@@ -13,7 +13,7 @@ const SideMenuItem: React.FC<SideMenuItemProps> = ({
 }) => {
   return (
     <li>
-      <NavLink to={`/სერვისები/${serviceId}`} className={setActiveStyles}>
+      <NavLink to={`/servisebi/${serviceId}`} className={setActiveStyles}>
         {serviceTitle}
       </NavLink>
     </li>

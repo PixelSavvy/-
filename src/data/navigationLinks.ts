@@ -8,17 +8,17 @@ export const navigationLinks: navigationLinksTypes[] = [
   },
   {
     label: "ჩვენ შესახებ",
-    to: "ჩვენ-შესახებ",
+    to: "chven-shesakheb",
     collapsed: false,
   },
   {
     label: "სერვისები",
-    to: "სერვისები",
+    to: "servisebi",
     collapsed: true,
   },
   {
     label: "ბლოგები",
-    to: "ბლოგები",
+    to: "blogebi",
     collapsed: false,
   },
 ];
