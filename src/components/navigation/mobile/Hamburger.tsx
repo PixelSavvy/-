@@ -1,31 +1,33 @@
 import { useContext } from "react";
+
 import { MobileNavigationContext } from "@/store/mobileNavigationStore";
 
 import { Turn } from "hamburger-react";
 
 const Hamburger = () => {
-  const { isMenuOpen, setIsMenuOpen, isSideMenuOpen } = useContext(
-    MobileNavigationContext
-  );
+  const {
+    isMobileNavigationOpen,
+    isSideMenuOpen,
+    setIsMobileNavigationOpen,
+    setIsSideMenuOpen,
+  } = useContext(MobileNavigationContext);
+
+  const props = {
+    size: 24,
+    distange: "lg",
+    color: "#000",
+    rounded: true,
+    label: "Show menu",
+    toggled: isMobileNavigationOpen,
+    toggle: () => {
+      setIsMobileNavigationOpen(!isMobileNavigationOpen);
+    },
+  };
 
   return (
-    <div
-      className={`relative z-[100]  transition-colors duration-1700 ease-in-out ${
-        isMenuOpen
-          ? "text-secondary"
-          : isSideMenuOpen
-          ? "text-white"
-          : "text-foreground"
-      }}`}
-    >
-      <Turn
-        label="Open menu"
-        distance="sm"
-        rounded
-        toggled={isMenuOpen}
-        onToggle={setIsMenuOpen}
-      />
-    </div>
+    <button type="button" className="z-50 lg:hidden">
+      <Turn {...props} />
+    </button>
   );
 };
 

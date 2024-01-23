@@ -6,7 +6,7 @@ const Section = ({
 }: React.HTMLAttributes<HTMLDivElement>) => {
   return (
     <section
-      className={cn("w-full my-10 md:my-16 lg:my-20 xl:my-24", className)}
+      className={cn("w-full my-12 md:my-20 lg:my-24 xl:my-32", className)}
       {...props}
     >
       {props.children}

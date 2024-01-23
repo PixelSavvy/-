@@ -33,7 +33,7 @@ const BlogDetails = () => {
 
   return (
     <Section>
-      <article>
+      <article className="max-w-4xl mx-auto ">
         {/* Blog cover image */}
         <AspectRatio ratio={16 / 9} className="mb-4">
           <img
@@ -59,7 +59,7 @@ const BlogDetails = () => {
       </article>
 
       {/* Blogs list */}
-      <BlogsCarousel subheading="მსგავსი ბლოგები" />
+      <BlogsCarousel />
     </Section>
   );
 };

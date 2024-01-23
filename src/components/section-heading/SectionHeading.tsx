@@ -1,12 +1,14 @@
 const SectionHeading = ({
   heading,
   subheading,
+  paragraph,
 }: {
   heading: string | undefined;
   subheading?: string | undefined;
+  paragraph?: string | undefined;
 }) => {
   return (
-    <div className="mb-10 space-y-3 text-center md:mb-14 lg:mb-16 xl:mb-20">
+    <div className="mb-6 space-y-3 text-center md:mb-8 lg:mb-10">
       {/* Subheading */}
       {subheading && (
         <div className="flex items-center justify-center gap-2">
@@ -18,7 +20,10 @@ const SectionHeading = ({
         </div>
       )}
       {/* Heading */}
-      <h2 className="font-bpg-boxo">{heading}</h2>
+      <div className="flex flex-col gap-4 place-items-center">
+        <h2 className="font-bpg-boxo">{heading}</h2>
+        <p className="max-w-2xl">{paragraph}</p>
+      </div>
     </div>
   );
 };

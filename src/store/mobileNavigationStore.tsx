@@ -1,56 +1,53 @@
 import { createContext, useState } from "react";
 
-import { navigationLinksTypes } from "@/types";
-
-type MobileNavigationContextType = {
-  isMenuOpen: boolean;
+interface MobileNavigationContextProps {
+  // MobileMenu
+  isMobileNavigationOpen: boolean;
+  setIsMobileNavigationOpen: (value: boolean) => void;
+  // SideMenu
   isSideMenuOpen: boolean;
-  setIsMenuOpen: (isOpen: boolean) => void;
-  setIsSideMenuOpen: (isOpen: boolean) => void;
-  collapsedLink: {
-    label: string;
-    sublinks: navigationLinksTypes[];
-  };
-  setCollapsedLink: (collapsedLink: {
-    label: string;
-    sublinks: navigationLinksTypes[];
-  }) => void;
+  setIsSideMenuOpen: (value: boolean) => void;
+}
+
+const MobileNavigationInitialContext = {
+  // MobileMenu
+  isMobileNavigationOpen: false,
+  setIsMobileNavigationOpen: () => {},
+  // SideMenu
+  isSideMenuOpen: false,
+  setIsSideMenuOpen: () => {},
 };
 
 export const MobileNavigationContext =
-  createContext<MobileNavigationContextType>({
-    isMenuOpen: false,
-    isSideMenuOpen: false,
-    setIsMenuOpen: () => {},
-    setIsSideMenuOpen: () => {},
-    collapsedLink: { label: "", sublinks: [] },
-    setCollapsedLink: () => {},
-  });
+  createContext<MobileNavigationContextProps>(MobileNavigationInitialContext);
 
-const MobileNavigationProvider: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const [collapsedLink, setCollapsedLink] = useState<{
-    label: string;
-    sublinks: navigationLinksTypes[];
-  }>({ label: "", sublinks: [] });
+interface MobileNavigationContextProviderProps {
+  children: React.ReactNode;
+}
 
-  const value = {
-    isMenuOpen,
-    isSideMenuOpen,
-    setIsMenuOpen,
-    setIsSideMenuOpen,
-    collapsedLink,
-    setCollapsedLink,
-  };
+const MobileNavigationContextProvider: React.FC<
+  MobileNavigationContextProviderProps
+> = ({ children }) => {
+  // MobileMenu
+  const [isMobileNavigationOpen, setIsMobileNavigationOpen] =
+    useState<boolean>(false);
+  // SideMenu
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
   return (
-    <MobileNavigationContext.Provider value={value}>
+    <MobileNavigationContext.Provider
+      value={{
+        // MobileMenu
+        isMobileNavigationOpen,
+        setIsMobileNavigationOpen,
+        // SideMenu
+        isSideMenuOpen,
+        setIsSideMenuOpen,
+      }}
+    >
       {children}
     </MobileNavigationContext.Provider>
   );
 };
 
-export default MobileNavigationProvider;
+export default MobileNavigationContextProvider;

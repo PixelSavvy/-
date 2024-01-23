@@ -13,7 +13,7 @@ const useHref: useHrefProps = (mobileHref, desktopHref) => {
     const isMobile = window.innerWidth < 1024;
     const href = isMobile ? mobileHref : desktopHref;
     setHref(href);
-  }, []);
+  }, [window.innerWidth]);
 
   return {
     href,

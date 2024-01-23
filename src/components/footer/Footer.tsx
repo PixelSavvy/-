@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 
 import styles from "./Footer.module.css";
-
-import { BsFacebook } from "react-icons/bs";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaTiktok } from "react-icons/fa";
+import { socialMediaLinksData } from "@/data/socialMediaLinksData";
+import SocialMediaButton from "../buttons/SocialMediaButton";
 
 const Footer = () => {
   return (
@@ -26,19 +24,17 @@ const Footer = () => {
         {/* Social media */}
         <div className="lg:text-left">
           <p className="mb-3 font-tbc-caps-md">დაგვიმეგობრდი:</p>
-          <div className="flex items-center justify-center gap-6 lg:justify-start">
-            <Link to="https://www.facebook.com/Shtagonebaa" target="_blank">
-              <BsFacebook className="w-8 h-8 transition-colors text-background hover:text-secondary" />
-            </Link>
-
-            <Link to="https://www.instagram.com/shtagoneba_ge/" target="_blank">
-              <AiFillInstagram className="w-8 h-8 transition-colors text-background hover:text-secondary" />
-            </Link>
-
-            <Link to="https://www.tiktok.com/@shtagoneba" target="_blank">
-              <FaTiktok className="w-8 h-8 transition-colors text-background hover:text-secondary" />
-            </Link>
-          </div>
+          <ul className="flex items-center justify-center gap-6 lg:justify-start">
+            {socialMediaLinksData.map((link, id) => (
+              <li key={id} className="group">
+                <SocialMediaButton
+                  icon={link.icon}
+                  mobileHref={link.mobileHref}
+                  desktopHref={link.desktopHref}
+                />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@ export const Paths = {
   HeroLayout: "",
   Home: "",
   About: "ჩვენ-შესახებ",
-  Services: "სერვისები/:category",
+  Services: "სერვისები/:serviceId",
 
   Blogs: "ბლოგები",
   BlogDetails: "ბლოგები/:id",

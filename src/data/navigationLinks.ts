@@ -1,6 +1,6 @@
 import { navigationLinksTypes } from "@/types";
 
-export const navLinks: navigationLinksTypes[] = [
+export const navigationLinks: navigationLinksTypes[] = [
   {
     label: "მთავარი",
     to: "",
@@ -15,28 +15,6 @@ export const navLinks: navigationLinksTypes[] = [
     label: "სერვისები",
     to: "სერვისები",
     collapsed: true,
-    sublinks: [
-      {
-        label: "საბაკალავრო ნაშრომი",
-        to: "სერვისები/საბაკალავრო-ნაშრომი",
-      },
-      {
-        label: "სამაგისტრო ნაშრომი",
-        to: "სერვისები/სამაგისტრო-ნაშრომი",
-      },
-      {
-        label: "რეფერატი",
-        to: "სერვისები/რეფერატი",
-      },
-      {
-        label: "ესე",
-        to: "სერვისები/ესე",
-      },
-      {
-        label: "პრეზენტაცია",
-        to: "სერვისები/პრეზენტაცია",
-      },
-    ],
   },
   {
     label: "ბლოგები",

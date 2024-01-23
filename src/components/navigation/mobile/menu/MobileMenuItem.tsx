@@ -1,34 +1,42 @@
+import { useContext } from "react";
+import { MobileNavigationContext } from "@/store/mobileNavigationStore";
+
 import { NavLink } from "react-router-dom";
-import { m } from "framer-motion";
 
-import MobileSideMenuTrigger from "@/components/navigation/mobile/side-menu/MobileSideMenuTrigger";
-
-import { mobileMenuItemVariants } from "@/animation/variants/mobileMenuVariants";
-import { navigationLinksTypes } from "@/types/navigationLinkTypes";
+import { navigationLinksTypes } from "@/types";
 import { setActiveStyles } from "@/lib/setActiveStyles";
+import { ChevronRight } from "@/assets/icons/icons";
 
-const MobileMenuItem: React.FC<navigationLinksTypes> = ({
-  to,
-  label,
-  collapsed = true,
-  sublinks = [],
-}) => {
+interface MobileMenuItemProps {
+  link: navigationLinksTypes;
+}
+
+const MobileMenuItem: React.FC<MobileMenuItemProps> = ({ link }) => {
+  const { setIsSideMenuOpen } = useContext(MobileNavigationContext);
+
+  const sideMenuOpenHandler = () => {
+    setIsSideMenuOpen(true);
+  };
+
   return (
-    <div className="w-full overflow-hidden">
-      <m.li
-        className="flex items-center justify-between w-full "
-        variants={mobileMenuItemVariants}
-      >
-        <NavLink to={to} className={setActiveStyles} end>
-          {label}
+    <li>
+      {!link.collapsed ? (
+        <NavLink to={link.to} className={setActiveStyles}>
+          {link.label}
         </NavLink>
-        {collapsed &&
-          sublinks &&
-          (sublinks as navigationLinksTypes[]).length > 0 && (
-            <MobileSideMenuTrigger label={label} sublinks={sublinks} />
-          )}
-      </m.li>
-    </div>
+      ) : (
+        // Collapsible menu item
+        <button
+          className="flex items-center justify-between gap-12 p-2 sm:justify-start md:gap-16"
+          onClick={sideMenuOpenHandler}
+        >
+          <span>{link.label}</span>
+          <span>
+            <ChevronRight size={24} />
+          </span>
+        </button>
+      )}
+    </li>
   );
 };
 

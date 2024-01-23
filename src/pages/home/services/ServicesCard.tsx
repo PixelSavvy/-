@@ -1,4 +1,5 @@
-import ServicesCardAction from "./ServicesCardAction";
+import ServicesButton from "@/components/buttons/ServicesButton";
+
 import ServicesCardIcon from "./ServicesCardIcon";
 import ServicesRandomNumber from "./ServicesRandomNumber";
 
@@ -14,14 +15,14 @@ interface ServicesCardProps {
 }
 
 const ServicesCard: React.FC<ServicesCardProps> = ({ service, id }) => {
-  // Card styles
-  const cardStyles = `px-4 py-8 flex flex-col justify-center items-center text-center shadow-xl rounded-xl hover:bg-secondary hover:text-background focus-within: focus-within:bg-secondary focus-within:text-background transition-colors ease duration-250 cursor-pointer group border-none`;
+  const serviceTitle = service.serviceTitle.replace(" ", "-").toLowerCase();
+  const href = `/სერვისები/${serviceTitle}`;
 
   return (
     <Card
-      className={`${cardStyles} ${
+      className={` px-4 py-8 flex flex-col justify-center items-center text-center shadow-xl rounded-xl hover:bg-secondary hover:text-background focus-within: focus-within:bg-secondary focus-within:text-background transition-colors ease duration-250 cursor-pointer group border-none  ${
         service.isFocused ? "bg-secondary  text-background" : ""
-      }`}
+      } `}
     >
       {/* Header */}
       <CardHeader className="p-0 mb-2 space-y-0">
@@ -31,7 +32,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ service, id }) => {
           id={id}
         />
       </CardHeader>
-      {/* Tilt */}
+      {/* Title */}
       <CardTitle className="mb-4 large lg:max-w-min">
         {service.serviceTitle}
       </CardTitle>
@@ -40,7 +41,7 @@ const ServicesCard: React.FC<ServicesCardProps> = ({ service, id }) => {
         <p>{service.serviceDescription}</p>
       </CardContent>
       {/* Cta */}
-      <ServicesCardAction isFocused={service.isFocused} />
+      <ServicesButton isFocused={service.isFocused} href={href} />
       <ServicesRandomNumber min={service.min} max={service.max} />
     </Card>
   );

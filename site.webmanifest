@@ -1,0 +1,15 @@
+{
+  "name": "შთაგონება",
+  "short_name": "შთაგონება",
+  "description": "საბაკალავრო ნაშრომს, სამაგისტრო ნაშრომს, სადიპლომო ნაშრომს, რეფერატს, ესეს, პრეზენტაციას, თუ ნებისმიერ საუნივერსიტეტო დავალებას, შთაგონება დაწერს შენს ნაცვლად.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FAD236",
+  "icons": [
+    {
+      "src": "https://ik.imagekit.io/jusiu7gbs/Shtagoneba/logo.jpg",
+      "type": "image/png"
+    }
+  ]
+}

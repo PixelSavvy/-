@@ -23,6 +23,7 @@
     "clsx": "^2.1.0",
     "contentful": "^10.6.16",
     "embla-carousel-react": "^8.0.0-rc19",
+    "fb": "^2.0.0",
     "framer-motion": "^10.17.12",
     "hamburger-react": "^2.5.0",
     "lucide-react": "^0.308.0",
@@ -37,6 +38,7 @@
     "use-count-up": "^3.0.1"
   },
   "devDependencies": {
+    "@types/fb": "^0.0.28",
     "@types/node": "^20.10.7",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",

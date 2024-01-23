@@ -1,7 +1,7 @@
 import DesktopActions from "./DesktopActions";
 import DesktopNavigationItem from "./DesktopNavigationItem";
 
-import { navLinks } from "@/data/navigationLinks";
+import { navigationLinks } from "@/data/navigationLinks";
 
 const DesktopNavigation = () => {
   return (
@@ -16,7 +16,7 @@ const DesktopNavigation = () => {
       </div>
       {/* Navlinks */}
       <ul className="flex items-center justify-center gap-8 xl:gap-10">
-        {navLinks.map((link) => (
+        {navigationLinks.map((link) => (
           <DesktopNavigationItem link={link} key={link.label} />
         ))}
       </ul>

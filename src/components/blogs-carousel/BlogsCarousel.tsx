@@ -4,7 +4,7 @@ import useContentful from "@/hooks/useContentful";
 import { blogsDataTypes } from "@/types/blogsDataTypes";
 
 import Section from "../ui/section";
-import SectionHeading from "../section-heading/SectionHeading";
+
 import BlogTemplate from "../blog-template/BlogTemplate";
 
 import {
@@ -16,16 +16,14 @@ import {
 } from "@/components/ui";
 
 import styles from "./BlogsCarousel.module.css";
+import SectionHeading from "../section-heading/SectionHeading";
 
 interface BlogsCarouselProps {
   heading?: string;
   subheading?: string;
 }
 
-const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
-  heading,
-  subheading,
-}) => {
+const BlogsCarousel: React.FC<BlogsCarouselProps> = () => {
   const [blogs, setBlogs] = useState<blogsDataTypes[]>([]);
 
   const query = "blog";
@@ -37,7 +35,8 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
     <Section
       className={`bg-muted ${styles.bleed} py-10 md:py-12 lg:py-14 xl:py-16 `}
     >
-      <SectionHeading heading={heading} subheading={subheading} />
+      {/* Carousel Heading */}
+      <SectionHeading heading="წაიკითხეთ ჩვენი ბლოგები" subheading="ბლოგები" />
       {/* Blogs Carousel */}
       <Carousel>
         <CarouselContent className="-ml-4 md:-ml-6">
@@ -50,7 +49,7 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = ({
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute hidden mt-8 ml-10 lg:block">
+        <div className="absolute hidden mt-8 ml-10 sm:block">
           <CarouselPrevious />
           <CarouselNext />
         </div>

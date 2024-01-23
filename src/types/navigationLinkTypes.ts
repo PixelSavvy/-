@@ -1,15 +1,11 @@
-export type navigationLinksTypes = {
+export interface navigationLinksTypes {
   label: string;
   to: string;
-  collapsed?: boolean;
-  sublinks?: navigationLinksTypes[] | [];
-};
+  collapsed: boolean;
+}
 
-export type navigationSideLinksTypes = {
-  label: string;
-};
-
-export type navigationSideMenuTriggerTypes = {
-  label: string;
-  sublinks: navigationLinksTypes[];
-};
+export interface sideMenuNavigationLinksTypes {
+  serviceTitle: string;
+  serviceId: string;
+  collapsed: boolean;
+}

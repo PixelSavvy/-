@@ -1,11 +1,14 @@
 import MobileNavigation from "./mobile/MobileNavigation";
 import DesktopNavigation from "./desktop/DesktopNavigation";
+import MobileNavigationContextProvider from "@/store/mobileNavigationStore";
 
 const Navigation = () => {
   return (
     <>
       {/* Mobile Navigation */}
-      <MobileNavigation />
+      <MobileNavigationContextProvider>
+        <MobileNavigation />
+      </MobileNavigationContextProvider>
       {/* Desktop Navigation */}
       <DesktopNavigation />
     </>

@@ -1,34 +1,18 @@
-import { Link } from "react-router-dom";
-
-import { Button } from "../ui";
-import { ChevronRight } from "@/assets/icons/icons";
+import OrderButton from "../buttons/OrderButton";
+import LearnMoreButton from "../buttons/LearnMoreButton";
 
 const HeroButtons = () => {
   return (
-    <div className="space-x-4">
-      <Link to={"/"} target="_blank" tabIndex={-1}>
-        <Button variant={"secondary"} className="text-background" size={"lg"}>
-          შეუკვეთე
-        </Button>
-      </Link>
+    <div className="flex flex-col gap-4 mt-10 place-items-center sm:flex-row sm:justify-center md:justify-start">
+      <OrderButton
+        label="შეუკვეთე"
+        className="w-full sm:w-fit bg-secondary hover:bg-secondary/90 focus-within:bg-secondary/90 text-background"
+      />
 
-      <Link
-        to={"/"}
-        target="_blank"
-        tabIndex={-1}
-        className="group hover:text-secondary"
-      >
-        <Button
-          className="bg-transparent border-2 border-transparent group-hover:text-secondary group-focus-within:text-secondary group-hover:border-secondary"
-          size={"lg"}
-        >
-          წაიკითხე მეტი
-          <ChevronRight
-            size={20}
-            className="ml-1 transition-all group-hover:ml-2 group-focus-within:ml-2 "
-          />
-        </Button>
-      </Link>
+      <LearnMoreButton
+        className="bg-transparent border-2 border-transparent hover:text-secondary focus-within:text-secondary hover:border-secondary"
+        label="წაიკითხე მეტი"
+      />
     </div>
   );
 };
