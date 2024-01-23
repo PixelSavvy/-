@@ -12,7 +12,7 @@ const ServicesRandomNumber: React.FC<ServicesRandomNumberProps> = ({
   const randomNumber = generateRandomNumber(min, max);
 
   return (
-    <p className="text-center md:mt-10 lg:mt-12 small">
+    <p className="text-center small">
       24 საათში ნანახია
       <span className="font-bold text-danger"> {" " + randomNumber}</span>-ჯერ
     </p>

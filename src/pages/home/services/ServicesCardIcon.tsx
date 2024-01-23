@@ -33,7 +33,7 @@ const ServicesCardIcon: React.FC<ServicesCardIconProps> = ({
 
   return (
     <div
-      className={`${color}  w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
+      className={`${color} w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
         isFocused ? "text-secondary" : "text-background"
       }`}
     >

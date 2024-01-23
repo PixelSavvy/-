@@ -13,7 +13,7 @@ const ServicesButton: React.FC<ServicesButtonProps> = ({ isFocused, href }) => {
     <Button
       variant={"link"}
       size={"icon"}
-      className={` mt-6 md:mt-8 lg:mt-10  w-10 h-10 rounded-full group-hover:bg-background group-hover:text-secondary transition-all ${
+      className={`mt-10 md:mt-12 lg:mt-14 w-10 h-10 rounded-full group-hover:bg-background group-hover:text-secondary transition-all ${
         isFocused
           ? "text-secondary bg-background"
           : "bg-secondary text-background"

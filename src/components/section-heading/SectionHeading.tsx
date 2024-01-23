@@ -8,7 +8,7 @@ const SectionHeading = ({
   paragraph?: string | undefined;
 }) => {
   return (
-    <div className="mb-6 space-y-3 text-center md:mb-8 lg:mb-10">
+    <div className="mb-4 space-y-3 text-center md:mb-6 lg:mb-8">
       {/* Subheading */}
       {subheading && (
         <div className="flex items-center justify-center gap-2">
