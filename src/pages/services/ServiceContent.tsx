@@ -9,7 +9,7 @@ interface ServiceContentProps {
 
 const ServiceContent: React.FC<ServiceContentProps> = ({ service }) => {
   return (
-    <Section className="space-y-48">
+    <Section className="space-y-16 md:space-y-24 lg:space-y-32 xl:space-y-40">
       <SectionHeading
         heading={service?.serviceTitle}
         subheading="სერვისები"

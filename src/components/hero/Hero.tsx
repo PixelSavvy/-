@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ url }) => {
 
   return (
     <Section
-      className="relative mt-10 md:mt-12 lg:mt-14 xl:mt-16 rounded-xl bg-primary lg:pr-4"
+      className="relative mt-20 md:mt-24 lg:mt-28 rounded-xl bg-primary"
       style={sectionStyles}
     >
       {/* Hero content */}

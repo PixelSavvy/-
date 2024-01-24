@@ -1,19 +1,29 @@
+import { useContext } from "react";
+import { MobileNavigationContext } from "@/store/mobileNavigationStore";
+
 import Hamburger from "./Hamburger";
 import Logo from "./Logo";
-import MobileMenu from "./menu/MobileMenu";
+
+import StickyNavigation from "@/animation/StickyNavigation";
 
 import MobileActions from "./MobileActions";
-import SideMenu from "./side-menu/SideMenu";
+import MobileNavigationMenu from "./menu/MobileNavigationMenu";
+import MobileNavigationSideMenu from "./side-menu/MobileNavigationSideMenu";
 
 const MobileNavigation = () => {
+  const { isMobileMenuOpen, isMobileSideMenuOpen } = useContext(
+    MobileNavigationContext
+  );
+
   return (
-    <div className="flex items-center justify-between">
+    <StickyNavigation className="flex items-center justify-between p-4 rounded-xl">
       <Logo />
       <MobileActions />
-      <MobileMenu />
-      <SideMenu />
       <Hamburger />
-    </div>
+
+      {isMobileMenuOpen && <MobileNavigationMenu />}
+      {isMobileSideMenuOpen && <MobileNavigationSideMenu />}
+    </StickyNavigation>
   );
 };
 

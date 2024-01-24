@@ -15,8 +15,8 @@ interface ServicesCardProps {
 }
 
 const ServicesCard: React.FC<ServicesCardProps> = ({ service, id }) => {
-  const serviceTitle = service.serviceTitle.replace(" ", "-").toLowerCase();
-  const href = `/servisebi/${serviceTitle}`;
+  const serviceId = service.serviceId.toLowerCase();
+  const href = `/servisebi/${serviceId}`;
 
   return (
     <Card

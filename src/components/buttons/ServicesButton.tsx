@@ -19,7 +19,7 @@ const ServicesButton: React.FC<ServicesButtonProps> = ({ isFocused, href }) => {
           : "bg-secondary text-background"
       }`}
     >
-      <Link to={href} tabIndex={-1} target="_blank">
+      <Link to={href} tabIndex={-1}>
         <ArrowRight size={20} />
       </Link>
     </Button>

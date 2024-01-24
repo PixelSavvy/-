@@ -4,7 +4,7 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui";
-import { navigationLinksTypes, sideMenuNavigationLinksTypes } from "@/types";
+import { sideMenuNavigationLinksTypes } from "@/types";
 import { ChevronDown } from "@/assets/icons/icons";
 import { NavLink } from "react-router-dom";
 import useContentful from "@/hooks/useContentful";
@@ -12,7 +12,6 @@ import { useState } from "react";
 
 interface DesktopNavigationCollapsibleItemProps {
   label: string;
-  sublinks: navigationLinksTypes[] | undefined;
 }
 
 const DesktopNavigationCollapsibleItem: React.FC<

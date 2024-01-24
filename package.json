@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "proxy": "https://shtagoneba.ge",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -30,6 +31,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
+    "react-live-chat-loader": "^2.9.1",
     "react-router-dom": "^6.21.1",
     "react-scroll": "^1.9.0",
     "react-type-animation": "^3.2.0",
@@ -46,6 +48,7 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
+    "dotenv": "^16.3.2",
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",

@@ -21,10 +21,7 @@ const DesktopNavigationItem: React.FC<DesktopNavigationItemProps> = ({
           </NavLink>
         </li>
       ) : (
-        <DesktopNavigationCollapsibleItem
-          sublinks={link.sublinks}
-          label={link.label}
-        />
+        <DesktopNavigationCollapsibleItem label={link.label} />
       )}
     </>
   );

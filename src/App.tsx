@@ -1,7 +1,10 @@
 import { BrowserRouter } from "react-router-dom";
+
 import AnimatedRoutes from "@/router";
 
 import LazyMotionProvider from "./animation/LazyMotionProvider";
+import FacebookChatProvider from "./components/facebook-chat/FacebookChatProvider";
+
 import { useEffect } from "react";
 
 const App = () => {
@@ -12,7 +15,9 @@ const App = () => {
   return (
     <LazyMotionProvider>
       <BrowserRouter>
-        <AnimatedRoutes />
+        <FacebookChatProvider>
+          <AnimatedRoutes />
+        </FacebookChatProvider>
       </BrowserRouter>
     </LazyMotionProvider>
   );

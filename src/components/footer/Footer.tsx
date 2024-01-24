@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import styles from "./Footer.module.css";
 import { socialMediaLinksData } from "@/data/socialMediaLinksData";
 import SocialMediaButton from "../buttons/SocialMediaButton";

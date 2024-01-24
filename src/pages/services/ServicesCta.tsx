@@ -9,8 +9,10 @@ const ServicesCta = () => {
     <Section
       className={`${styles.bleed} bg-muted py-16 md:py-24 text-center flex flex-col place-items-center`}
     >
-      <h2>შთაგონება - შენი მარტივი სტუდენტური ცხოვრებისთვის!</h2>
-      <p className="max-w-2xl mb-16 md:mb-20">
+      <h2 className="max-w-4xl">
+        შთაგონება - შენი მარტივი სტუდენტური ცხოვრებისთვის!
+      </h2>
+      <p className="max-w-2xl mb-16">
         მოგვწერე ახლავე და დაასრულე სწავლა! შთაგონების პროფესიონალური გუნდი
         თავიდან აგაცილებს ყველა აკადემიურ პრობლემას.
       </p>

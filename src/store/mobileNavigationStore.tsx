@@ -2,20 +2,20 @@ import { createContext, useState } from "react";
 
 interface MobileNavigationContextProps {
   // MobileMenu
-  isMobileNavigationOpen: boolean;
-  setIsMobileNavigationOpen: (value: boolean) => void;
+  isMobileMenuOpen: boolean;
+  setisMobileMenuOpen: (value: boolean) => void;
   // SideMenu
-  isSideMenuOpen: boolean;
-  setIsSideMenuOpen: (value: boolean) => void;
+  isMobileSideMenuOpen: boolean;
+  setisMobileSideMenuOpen: (value: boolean) => void;
 }
 
 const MobileNavigationInitialContext = {
   // MobileMenu
-  isMobileNavigationOpen: false,
-  setIsMobileNavigationOpen: () => {},
+  isMobileMenuOpen: false,
+  setisMobileMenuOpen: () => {},
   // SideMenu
-  isSideMenuOpen: false,
-  setIsSideMenuOpen: () => {},
+  isMobileSideMenuOpen: false,
+  setisMobileSideMenuOpen: () => {},
 };
 
 export const MobileNavigationContext =
@@ -29,20 +29,20 @@ const MobileNavigationContextProvider: React.FC<
   MobileNavigationContextProviderProps
 > = ({ children }) => {
   // MobileMenu
-  const [isMobileNavigationOpen, setIsMobileNavigationOpen] =
-    useState<boolean>(false);
+  const [isMobileMenuOpen, setisMobileMenuOpen] = useState<boolean>(false);
   // SideMenu
-  const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
+  const [isMobileSideMenuOpen, setisMobileSideMenuOpen] =
+    useState<boolean>(false);
 
   return (
     <MobileNavigationContext.Provider
       value={{
         // MobileMenu
-        isMobileNavigationOpen,
-        setIsMobileNavigationOpen,
+        isMobileMenuOpen,
+        setisMobileMenuOpen,
         // SideMenu
-        isSideMenuOpen,
-        setIsSideMenuOpen,
+        isMobileSideMenuOpen,
+        setisMobileSideMenuOpen,
       }}
     >
       {children}

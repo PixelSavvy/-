@@ -1,33 +1,25 @@
 export const mobileMenuVariants = {
-  hidden: {
+  initial: {
     y: "-100%",
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
   },
-  visible: {
+  animate: {
     y: 0,
     transition: {
-      duration: 0.3,
-      ease: "easeInOut",
+      duration: 0.5,
+      ease: [0.12, 0, 0.39, 0],
     },
   },
 };
 
-export const mobileSideMenuVariants = {
-  hidden: {
+export const MobileSideMenuVariants = {
+  initial: {
     x: "100%",
-    transition: {
-      duration: 0.3,
-      ease: "easeInOut",
-    },
   },
-  visible: {
+  animate: {
     x: 0,
     transition: {
-      duration: 0.3,
-      ease: "easeInOut",
+      duration: 0.5,
+      ease: [0.12, 0, 0.39, 0],
     },
   },
 };

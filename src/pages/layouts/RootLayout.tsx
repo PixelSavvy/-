@@ -6,8 +6,6 @@ import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 const RootLayout = () => {
-  const url = window.location.pathname;
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

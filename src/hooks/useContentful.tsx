@@ -13,9 +13,9 @@ const useContentful = <T,>({
   const [data, setData] = useState<T[]>([]);
 
   const client = createClient({
-    space: "9pmgfh9t51r0",
-    accessToken: "PuE_hFF1pCB0Ix5IUNbtsHtbOSqSPvvVeASgbSXBRA8",
-    host: "https://cdn.contentful.com",
+    space: import.meta.env.VITE_CONTENTFUL_SPACE_ID,
+    accessToken: import.meta.env.VITE_CONTENTFUL_ACCESS_TOKEN,
+    host: import.meta.env.VITE_CONTENTFUL_HOST,
   });
 
   // Fetch Data

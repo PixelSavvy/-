@@ -6,10 +6,10 @@ import { Turn } from "hamburger-react";
 
 const Hamburger = () => {
   const {
-    isMobileNavigationOpen,
-    isSideMenuOpen,
-    setIsMobileNavigationOpen,
-    setIsSideMenuOpen,
+    isMobileMenuOpen,
+    setisMobileMenuOpen,
+    isMobileSideMenuOpen,
+    setisMobileSideMenuOpen,
   } = useContext(MobileNavigationContext);
 
   const props = {
@@ -18,9 +18,14 @@ const Hamburger = () => {
     color: "#000",
     rounded: true,
     label: "Show menu",
-    toggled: isMobileNavigationOpen,
+    toggled: isMobileMenuOpen || isMobileSideMenuOpen,
     toggle: () => {
-      setIsMobileNavigationOpen(!isMobileNavigationOpen);
+      setisMobileMenuOpen(!isMobileMenuOpen);
+
+      if (isMobileSideMenuOpen) {
+        setisMobileSideMenuOpen(!isMobileSideMenuOpen);
+        setisMobileMenuOpen(!isMobileMenuOpen);
+      }
     },
   };
 

@@ -5,7 +5,7 @@ import { navigationLinks } from "@/data/navigationLinks";
 
 const DesktopNavigation = () => {
   return (
-    <nav className="items-center justify-between hidden lg:flex">
+    <nav className="items-center justify-between hidden lg:flex ">
       {/* Logo */}
       <div className="w-14 h-14">
         <img

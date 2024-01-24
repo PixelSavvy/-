@@ -33,7 +33,7 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = () => {
 
   return (
     <Section
-      className={`bg-muted ${styles.bleed} py-10 md:py-12 lg:py-14 xl:py-16 `}
+      className={`bg-muted ${styles.bleed} py-12 md:py-14 lg:py-16 xl:py-18 `}
     >
       {/* Carousel Heading */}
       <SectionHeading heading="წაიკითხეთ ჩვენი ბლოგები" subheading="ბლოგები" />
@@ -49,7 +49,8 @@ const BlogsCarousel: React.FC<BlogsCarouselProps> = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <div className="absolute hidden mt-8 ml-10 sm:block">
+        {/* Carousel Controls */}
+        <div className="absolute mt-6 ml-12 md:ml-10 md:mt-8 ">
           <CarouselPrevious />
           <CarouselNext />
         </div>

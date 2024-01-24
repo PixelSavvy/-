@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ServiceContent from "./ServiceContent";
 import ServicesCta from "./ServicesCta";
 import { servicePageTypes } from "@/types/serviceDataTypes";
+import Universities from "@/components/universities/Universities";
 
 const ServicePage = () => {
   const [services, setServices] = useState<servicePageTypes[]>([]);
@@ -27,6 +28,7 @@ const ServicePage = () => {
   return (
     <>
       <ServiceContent service={activeService} />
+      <Universities />
       <ServicesCta />
     </>
   );

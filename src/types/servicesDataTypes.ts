@@ -1,5 +1,6 @@
 export interface servicesDataTypes {
   serviceTitle: string;
+  serviceId: string;
   serviceDescription: string;
   color: string;
 
