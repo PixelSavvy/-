@@ -36,7 +36,7 @@ const useContentful = <T,>({
     };
 
     fetchData();
-  }, [query]);
+  }, [query, client]);
 
   useEffect(() => {
     if (data.length > 0) {
